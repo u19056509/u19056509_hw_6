@@ -7,6 +7,7 @@ using u19056509_hw_6.Models;
 using PagedList;
 using PagedList.Mvc;
 
+
 namespace u19056509_hw_6.Controllers
 {
     public class HomeController : Controller
@@ -48,6 +49,11 @@ namespace u19056509_hw_6.Controllers
             
 
             return View();
+        }
+        public ActionResult Orders(int? id, string search, int? i)
+        {
+           
+            return View(db.order_items.Where(x => x.order.order_date.ToString().StartsWith(search) || search == null).ToList().ToPagedList(i ?? 1, 10));
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿@model IPagedList<u19056509_hw_6.Models.order_items>
-@{
-    ViewBag.Title = "Orders";
-}
+@{ ViewBag.Title = "Orders"; }
 
 @using PagedList.Mvc;
 @using PagedList;
@@ -11,14 +9,9 @@
 <p>
     @using (Html.BeginForm("Orders", "OrderSearch", FormMethod.Get))
     {
-        <input type="text" name="search" placholder="yyyy/mm/dd" />
-        <input type="submit" name="submit" value="Search" />
-    }
+<input type="text" name="search" placholder="yyyy/mm/dd" />
+                <input type="submit" name="submit" value="Search" />}
 </p>
-
-@{
-    var i = 1;
-}
 
 <table class="table">
 
@@ -26,41 +19,42 @@
     @foreach (var item in Model)
     {
 
-        <tr>
-            <th>
-                Product Name
-            </th>
-            <th>
-                List Price
-            </th>
-            <th>
-                Quantity
-            </th>
-            <th>
-                Total
-            </th>
-        </tr>
-        <tr>
+<tr>
+    <th>
+        Product Name
+    </th>
+    <th>
+        List Price
+    </th>
+    <th>
+        Quantity
+    </th>
+    <th>
+        Total
+    </th>
+</tr>
+                <tr>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.product.product_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.list_price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.total)
-            </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.product.product_name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.list_price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.total)
+                    </td>
 
-        </tr>
-    }
+                </tr>
+}
     <tr>
         <td></td>
         <td></td>
         <td>Grand Total</td>
     </tr>
 </table>
+
 

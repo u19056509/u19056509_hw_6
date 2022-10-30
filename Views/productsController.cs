@@ -8,6 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using u19056509_hw_6.Models;
 
+using PagedList;
+
+
+
 namespace u19056509_hw_6.Views
 {
     public class productsController : Controller
